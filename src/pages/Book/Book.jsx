@@ -1,8 +1,10 @@
 import React, { use } from 'react';
+import { DiCreativecommons } from 'react-icons/di';
 import { FaStarHalfAlt } from "react-icons/fa";
 
 const Book = ({singleBook}) => {
-    const {bookName, author, image, rating, category}=singleBook;
+    const {bookName, author, publisher, image, rating, category, tags, yearOfPublishing
+    }=singleBook;
     // console.log(singleBook)
     // const data=use(bookPromise)
     // console.log(data)
@@ -15,11 +17,17 @@ const Book = ({singleBook}) => {
       alt="Shoes" />
   </figure>
   <div className="card-body">
+    <div className='flex  justify-around mb-4 font-[600]'>
+      {
+        tags.map(tag=><button>{tag}</button>)
+      }
+    </div>
     <h2 className="card-title">
       {bookName}
-      <div className="badge badge-secondary">NEW</div>
+      <div className="badge badge-secondary">{yearOfPublishing}</div>
     </h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+    <p>Book by: {publisher}</p>
+    <div className='border-t-1 border-dashed p-2'></div>
     <div className="card-actions justify-end">
       <div className="badge badge-outline border-none font-[600]">{category}</div>
       <div className="badge badge-outline border-none font-[600]">{rating} <FaStarHalfAlt /></div>

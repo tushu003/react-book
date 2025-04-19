@@ -5,6 +5,7 @@ import {
 import Root from '../pages/Root/Root';
 import Errorpage from '../pages/Errorpage/Errorpage';
 import Hoom from '../pages/Hoom/Hoom';
+import About from '../pages/About/About';
   
 
 export const router = createBrowserRouter([
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
             loader: ()=>fetch('BooksData.json'),
             path:"/",
             Component: Hoom
+        },
+        {
+            path: "/about",
+            Component: About
         }
       ]
     },
