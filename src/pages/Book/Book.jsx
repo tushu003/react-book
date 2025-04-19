@@ -1,15 +1,17 @@
 import React, { use } from 'react';
 import { DiCreativecommons } from 'react-icons/di';
 import { FaStarHalfAlt } from "react-icons/fa";
+import { Link } from 'react-router';
 
 const Book = ({singleBook}) => {
-    const {bookName, author, publisher, image, rating, category, tags, yearOfPublishing
+    const {bookName, publisher, image,bookId, rating, category, tags, yearOfPublishing
     }=singleBook;
     // console.log(singleBook)
     // const data=use(bookPromise)
     // console.log(data)
     return (
         <div>
+            <Link to={`/bookDetails/${bookId}`}>
             <div className="card bg-base-100 py-4 shadow-sm border-gray-500">
   <figure className='p-4 w-3/4 bg-gray-200 mx-auto'>
     <img className='h-[166px] py-4'
@@ -34,6 +36,7 @@ const Book = ({singleBook}) => {
     </div>
   </div>
 </div>
+</Link>
         </div>
     );
 };
